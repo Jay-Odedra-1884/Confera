@@ -27,7 +27,7 @@ const start = () => {
     .catch((e) => {
         console.error("Error connecting to MongoDB:", e);
     })
-    app.listen(port, () => {
+    server.listen(port, () => {
         console.log(`server listing on port: ${port}`);
     })
 }

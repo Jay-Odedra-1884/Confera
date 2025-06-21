@@ -30,7 +30,7 @@ const ConnectToServer = (server) => {
             // }
 
             for(let i = 0; i < connection[path].length; i++) {
-                io.to(connection[path][i]).emit("user-joint", socket.id, connection[path])
+                io.to(connection[path][i]).emit("user-joined", socket.id, connection[path])
             }
 
             if(messages[path] !== undefined) {
@@ -80,7 +80,7 @@ const ConnectToServer = (server) => {
 
             for(const [k, v ] of JSON.parse(JSON.stringify(Object.entries(connection)))) {
                 for(let i = 0; i < v.length; i++) {
-                    if(v[a] === socket.id) {
+                    if(v[i] === socket.id) {
                         key = k;
 
                         for(let j =0; j < connection[key].length; j++) {
